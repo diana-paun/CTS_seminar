@@ -6,6 +6,10 @@ public class Main {
 		CalendarUtil cu = new CalendarUtil();
 		
 		System.out.println(cu.weekDay(3));
+		
+		System.out.println(cu.weekDay2(3));//cu switch
+		
+		System.out.println(cu.weekDay3(3));//cu vector
 	}
 
 }

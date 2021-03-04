@@ -14,14 +14,16 @@ public class BankAccount {
 	}
 	
 	//retragere bani
-	public void withdraw(long amount) {
+	public void withdraw(long amount) throws InsuficientFundsException {
+		if(amount > balance)
+			throw new InsuficientFundsException("Insuficient Funds " + balance);
 		System.out.println("withdowing "+ amount + " from "+ iban);
 		balance -= amount;
 	}
 	
 	//depunere bani
 	public void deposit(long amount) {
-		System.out.println("depositing "+ amount + " to "+ iban);
+		System.out.println("Adding "+ amount + " to "+ iban);
 		balance += amount;
 	}
 

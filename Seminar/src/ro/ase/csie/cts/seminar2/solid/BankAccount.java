@@ -14,12 +14,14 @@ public class BankAccount {
 	}
 	
 	//retragere bani
-	private void withdraw(long amount) {
+	public void withdraw(long amount) {
+		System.out.println("withdowing "+ amount + " from "+ iban);
 		balance -= amount;
 	}
 	
 	//depunere bani
-	private void deposit(long amount) {
+	public void deposit(long amount) {
+		System.out.println("depositing "+ amount + " to "+ iban);
 		balance += amount;
 	}
 

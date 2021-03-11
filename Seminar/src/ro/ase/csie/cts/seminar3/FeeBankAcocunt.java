@@ -1,6 +1,6 @@
 package ro.ase.csie.cts.seminar3;
 
-public class FeeBankAcocunt extends BankAccount {
+public class FeeBankAcocunt extends DebitBankAccount {
 
 	private long fee = 2;
 	

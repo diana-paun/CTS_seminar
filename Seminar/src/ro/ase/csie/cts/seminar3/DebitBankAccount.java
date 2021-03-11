@@ -1,46 +1,56 @@
 package ro.ase.csie.cts.seminar3;
 
-public class DebitBankAccount implements Payable, Receivable {
+public class DebitBankAccount extends BankAccount implements Payable, Receivable, Transferable {
 
-	private String iban;
-	private long balance;
-	
-	private Person accountHolder;
-	
 	public DebitBankAccount(String iban, Person person) {
-		this.iban=iban;
-		this.accountHolder = person;
-		balance = 0;
-	}
-	
-	//retragere bani
+        this.iban = iban;
+        this.accountHolder = person;
+        this.balance = 0;
+    }
+
 	@Override
-	public void withdraw(long amount) throws InsuficientFundsException {
-		if (amount > balance)
-			throw new InsuficientFundsException("Insuficient funds " + balance);
-		System.out.println("withdrawing " + amount + " from " + iban);
-		balance -= amount;
-	}
+    public void withdraw(long amount) throws InsuficientFundsException {
+        if(amount > balance){
+            throw new InsuficientFundsException("Insufficient Funds");
+        }
+        System.out.println("Withdrawing " + amount + " from " + iban);
+        balance -= amount;
+    }
 
-	
-	//depunere bani
+    @Override
+    public void deposit(long amount){
+        System.out.println("Adding " + amount + " to " + iban);
+        balance += amount;
+    }
+
+    public String getIban() {
+        return iban;
+    }
+
+    public void setIban(String iban) {
+        this.iban = iban;
+    }
+
+    public long getBalance() {
+        return balance;
+    }
+
+    public void setBalance(long balance) {
+        this.balance = balance;
+    }
+
+    public Person getAccountHolder() {
+        return accountHolder;
+    }
+
+    public void setAccountHolder(Person accountHolder) {
+        this.accountHolder = accountHolder;
+    }
+
 	@Override
-	public void deposit(long amount) {
-		System.out.println("Adding "+ amount + " to "+ iban);
-		balance += amount;
+	public void transfer(Receivable destination, long amount) throws InsuficientFundsException{
+		this.withdraw(amount);
+		destination.deposit(amount);
 	}
-
-	public String getIban() {
-		return iban;
-	}
-
-	public long getBalance() {
-		return balance;
-	}
-
-	public Person getAccountHolder() {
-		return accountHolder;
-	}
-
 
 }

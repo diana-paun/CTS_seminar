@@ -16,11 +16,12 @@ public class DebitBankAccount implements Payable, Receivable {
 	//retragere bani
 	@Override
 	public void withdraw(long amount) throws InsuficientFundsException {
-		if(amount > balance)
-			throw new InsuficientFundsException("Insuficient Funds " + balance);
-		System.out.println("withdowing "+ amount + " from "+ iban);
+		if (amount > balance)
+			throw new InsuficientFundsException("Insuficient funds " + balance);
+		System.out.println("withdrawing " + amount + " from " + iban);
 		balance -= amount;
 	}
+
 	
 	//depunere bani
 	@Override

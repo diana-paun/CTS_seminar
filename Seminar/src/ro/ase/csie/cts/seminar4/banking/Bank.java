@@ -23,9 +23,9 @@ public class Bank {
 	public DebitBankAccount openDebitAccount(Person holder) {
 		DebitBankAccount account;
 		if(holder.getAge() > 18) 
-            account = new FeeBankAcocunt(holder.getNotificationType() == Person.NotificationType.EMAIL ? emailNotificationService : smsNotificationService, generateIban(), holder);
+            account = new FeeBankAcocunt(holder.getNotificationType().getNotificationService(), generateIban(), holder);
         else
-            account = new DebitBankAccount(holder.getNotificationType() == Person.NotificationType.EMAIL ? emailNotificationService : smsNotificationService, generateIban(), holder);
+            account = new DebitBankAccount(holder.getNotificationType().getNotificationService(), generateIban(), holder);
         return account;
 	}
 	

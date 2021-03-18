@@ -9,6 +9,9 @@ public class Person {
 	
 	private Date birthDate;
 	
+	private Integer age;
+	
+
 	private long salary;
 	
 	private String email;
@@ -64,5 +67,20 @@ public class Person {
 	}
 	public void setSalary(long salary) {
 		this.salary = salary;
+	}
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+	public NotificationType getNotificationType() {
+		return notificationType;
+	}
+
+	public void setNotificationType(NotificationType notificationType) {
+		this.notificationType = notificationType;
 	}
 }

@@ -1,0 +1,18 @@
+1. Crearea de diferite tipuri de caractere din joc
+- in prezent exista 3 tipuri de caractere DISNEY, DC si MARVEL
+- jocul fiind in dezvoltare exista riscul ca in viitor sa apara tipuri noi sau cele existente se vor modifica
+- jocul permite alegerea unei teme care influenteaza colectia de personaje; trebuie utilizata o metoda eficienta care sa pemita jocului utilizarea oricarei teme fara a modifica major functionalitatea
+
+Context: CREAREA de diff tipuri de caractere
+Factory = exista o familie, framework/colectie de cls cu acelasi scop (tip de caracter)
+
+RECAP----
+Builder = tip complex
+Prototype = crearea obj e costisitoare
+Singleton = creare unica
+----
+
+Cuv cheie:
+- 3 tipuri de caractere => 3 clase
+- exista riscul sa apara tipuri noi pe viitor sau se vor modif cele existente
+- alegi o tema care influenteaza colectia de personaje (disney, dc, marvel)

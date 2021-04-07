@@ -16,3 +16,9 @@ Cuv cheie:
 - 3 tipuri de caractere => 3 clase
 - exista riscul sa apara tipuri noi pe viitor sau se vor modif cele existente
 - alegi o tema care influenteaza colectia de personaje (disney, dc, marvel)
+
+=================================================================================================================================================
+2. Pentru a permite altor companii sau jucatorilor sa dezvolte solutii externe care sa se conecteze la joc trebuie dezvoltata o librarie (un API)
+- API-ul contine multe clase cu multe detalii
+- nu toate clasele sunt documentate
+- API-ul trebuie sa ofere o interfata simplificata pentru un set de functii de baza
